@@ -1,5 +1,20 @@
+import { useRouter } from "next/router";
 
+export default function User({ descript }) {
+  const a = useRouter();
 
-export default function (){
-    return <div>profession</div>
+  return <div>profession {descript}</div>;
+}
+
+import fsPromises from "fs/promises";
+import path from "path";
+export async function getServerSideProps({ params }) {
+  const filePath = path.join(process.cwd(), `user.json`);
+  const jsonData = await fsPromises.readFile(filePath);
+  const objectData = JSON.parse(jsonData);
+  const data = objectData.filter((item) => item.id === +params.id);
+
+  return {
+    props: { descript: data[0].description }, 
+  };
 }

@@ -1,6 +1,22 @@
 [
-    { "id": 1, "vacancy": "Senyor Vue.js Developer" },
-    { "id": 2, "vacancy": "Middle React Developer" },
-    { "id": 3, "vacancy": "Junior Javascript Developer" },
-    { "id": 4, "vacancy": "Senyor Full-Stack Engineer" }
-  ]
+  {
+    "id": 1,
+    "vacancy": "Senyor Vue.js Developer",
+    "description": "we are looking for positive and with big motivations person for Senyor Vue.js Developer vacancy"
+  },
+  {
+    "id": 2,
+    "vacancy": "Middle React Developer",
+    "description": "we are looking for positive and with big motivations person for Middle React Developer vacancy"
+  },
+  {
+    "id": 3,
+    "vacancy": "Junior Javascript Developer",
+    "description": "we are looking for positive and with big motivations person for Junior Javascript Developer vacancy"
+  },
+  {
+    "id": 4,
+    "vacancy": "Senyor Full-Stack Engineer",
+    "description": "we are looking for positive and with big motivations person for Senyor Full-Stack Engineer vacancy"
+  }
+]

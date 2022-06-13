@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from "next/link";
 
 export default function Home({objectData}) {
-  console.log("objectData", objectData);
+  
   return (
     <div className="container">
       <Head>
@@ -16,7 +16,7 @@ export default function Home({objectData}) {
         <div>Quality Assurance Engineering Businnes Development</div>
         <ul>
           {objectData.map(item =>{
-            return <li key={item.id}> <Link href = {`vacancy/${item.id}`}><a>{item.vacancy}</a></Link> <button>+</button></li>
+            return <li key={item.id}> <Link href = {`/vacancy/${item.id}`}><a>{item.vacancy}</a></Link> <button>+</button></li>
           })}
         </ul>
       </main>
