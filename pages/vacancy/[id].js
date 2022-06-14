@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import fsPromises from "fs/promises";
+import path from "path";
 
 export default function User({ descript }) {
   const a = useRouter();
@@ -6,8 +8,6 @@ export default function User({ descript }) {
   return <div>profession {descript}</div>;
 }
 
-import fsPromises from "fs/promises";
-import path from "path";
 export async function getServerSideProps({ params }) {
   const filePath = path.join(process.cwd(), `user.json`);
   const jsonData = await fsPromises.readFile(filePath);
