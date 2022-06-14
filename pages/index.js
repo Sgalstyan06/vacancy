@@ -1,24 +1,32 @@
 import Head from "next/head";
-import Link from "next/link";
 import fsPromises from "fs/promises";
 import path from "path";
 import { useRef, useState } from "react";
+import Item from "../components/item";
 
 export default function Home({ objectData }) {
-  const [showConten, SetShowContent] = useState(false);
-  const ref = useRef(null);
+  const [listItem, setListItem] = useState([...objectData]);
+  // const ref = useRef(null);
 
-  function openDescription() {
-    if (!showConten) {
-      ref.current.classList.remove("hide");
-      ref.current.classList.add("descript");
-      SetShowContent((prev) => !prev);
-    } else {
-      ref.current.classList.add("hide");
-      ref.current.classList.remove("descript");
-      SetShowContent((prev) => !prev);
-    }
+  function changePlusBtn(id) {
+    console.log("id", id);
+    setListItem(
+      listItem.map((item) => {
+        if (item.id === id) {
+          if (item.show_description_button === "-") {
+            item.show_description_button = "+";
+          } else {
+            item.show_description_button = "-";
+          }
+
+          return item;
+        } else {
+          return item;
+        }
+      })
+    );
   }
+  console.log("listItem", listItem);
   return (
     <div className="container">
       <Head>
@@ -29,29 +37,24 @@ export default function Home({ objectData }) {
       <main>
         <p>Open Vacancies</p>
         <h1>We are hiring!</h1>
-        <div>Quality Assurance Engineering Businnes Development</div>
-        <div className="items">
-          {objectData.map((item) => {
+        <div className="title">
+          <span>Quality Assurance</span>
+          <span className="block">Engineering</span>
+          <span className="block">Businnes Development</span>
+        </div>
+        <section> <div className="items">
+          {listItem.map((item) => {
             return (
-              <div key={item.id} className="main-item">
-                <div className="item">
-                  <Link href={`/vacancy/${item.id}`}>
-                    <a>
-                      <span>{item.vacancy}</span>
-                    </a>
-                  </Link>
-                </div>
-                <div ref={ref} className="hide">
-                  asd
-                </div>
-                <div className="btn">
-                  <button onClick={openDescription}>+</button>
-                </div>
-                
+              <div key={item.id}>
+                <Item item={item} changePlusBtn={changePlusBtn} />
               </div>
             );
           })}
         </div>
+        <aside className="">Benefit</aside>
+        <i class="fa-solid fa-check"></i>
+        </section>
+       
       </main>
 
       <footer></footer>
@@ -65,7 +68,8 @@ export default function Home({ objectData }) {
 
         h1 {
           width: 379px;
-          height: 50px;
+          
+          margin: 16px 0 60px 0;
           font-family: "Ubuntu";
           font-style: normal;
           font-weight: 700;
@@ -73,62 +77,34 @@ export default function Home({ objectData }) {
           line-height: 50px;
         }
 
+        .title {
+          height: 28px;
+        }
+
+        .block {
+          margin-left: 40px;
+        }
+        .title span {
+          display: inline-block;          
+          height: 28px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+        }
+
+        section{
+          display:flex;          
+        }
+
+        aside {
+          margin-top: 32px;
+
+        }
         .items {
           margin-top: 32px;
-        }
-
-        .main-item {
-          position: relative;
-        }
-
-        .item {
-          position: relative;
           width: 789px;
-          height: 64px;
-          margin-top: 17px;
-          background: #ffffff;
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          border: 1px solid black;
-        }
-
-        .item a {
-          display: block;
-          text-decoration: none;
-          width: 100%;
-          height: 100%;
-        }
-
-        .item a span {
-          display: inline-block;
-          width: 376px;
-          height: 34px;
-          margin: 15px 393px 15px 20px;
-          font-family: "Ubuntu";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 34px;
-        }
-
-        .btn {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          left: 744px;
-          top: 22px;
-          border: 2px solid #1dca9d;
-          z-index: 5;
-        }
-
-        .descript {
-          width: 789px;
-          height: 504px;
-          border: 1px solid black;
-          margin-top: 16px;
-        }
-
-        .hide {
-          display: none;
         }
       `}</style>
 

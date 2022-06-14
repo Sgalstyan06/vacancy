@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import fsPromises from "fs/promises";
 import path from "path";
+import Layout from "./layout";
 
 export default function User({ descript }) {
-  const a = useRouter();
+  // const a = useRouter();
 
-  return <div>profession {descript}</div>;
+  return <Layout className="content"> {descript}</Layout>;
 }
 
 export async function getServerSideProps({ params }) {
@@ -15,6 +16,15 @@ export async function getServerSideProps({ params }) {
   const data = objectData.filter((item) => item.id === +params.id);
 
   return {
-    props: { descript: data[0].description }, 
+    props: { descript: data[0].description },
   };
+}
+
+{
+  /* <style jsx>{`
+    .content {
+      background: red;
+    }
+  `}
+</style> */
 }
