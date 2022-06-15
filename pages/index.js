@@ -8,7 +8,7 @@ export default function Home({ objectData }) {
   const [listItem, setListItem] = useState([...objectData]);
 
   function changePlusBtn(id) {
-    console.log("id", id);
+    
     setListItem(
       listItem.map((item) => {
         if (item.id === id) {
@@ -17,7 +17,6 @@ export default function Home({ objectData }) {
           } else {
             item.show_description_button = "/images/minus.png";
           }
-
           return item;
         } else {
           return item;
@@ -73,7 +72,10 @@ export default function Home({ objectData }) {
         </section>
       </main>
 
-      <footer></footer>
+      <footer>
+          
+            
+            </footer>
 
       <style jsx>{`
         main {
