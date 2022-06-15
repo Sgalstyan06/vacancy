@@ -1,22 +1,21 @@
 import Head from "next/head";
 import fsPromises from "fs/promises";
 import path from "path";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Item from "../components/item";
 
 export default function Home({ objectData }) {
   const [listItem, setListItem] = useState([...objectData]);
-  // const ref = useRef(null);
 
   function changePlusBtn(id) {
     console.log("id", id);
     setListItem(
       listItem.map((item) => {
         if (item.id === id) {
-          if (item.show_description_button === "-") {
-            item.show_description_button = "+";
+          if (item.show_description_button === "/images/minus.png") {
+            item.show_description_button = "/images/plus.png";
           } else {
-            item.show_description_button = "-";
+            item.show_description_button = "/images/minus.png";
           }
 
           return item;
@@ -26,12 +25,11 @@ export default function Home({ objectData }) {
       })
     );
   }
-  console.log("listItem", listItem);
+
   return (
     <div className="container">
       <Head>
         <title>We are hiring</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
@@ -39,22 +37,40 @@ export default function Home({ objectData }) {
         <h1>We are hiring!</h1>
         <div className="title">
           <span>Quality Assurance</span>
-          <span className="block">Engineering</span>
-          <span className="block">Businnes Development</span>
+          <span className="title-block">Engineering</span>
+          <span className="title-block">Businnes Development</span>
         </div>
-        <section> <div className="items">
-          {listItem.map((item) => {
-            return (
-              <div key={item.id}>
-                <Item item={item} changePlusBtn={changePlusBtn} />
-              </div>
-            );
-          })}
-        </div>
-        <aside className="">Benefit</aside>
-        <i class="fa-solid fa-check"></i>
+
+        <section>
+          <div className="items">
+            {listItem.map((item) => {
+              return (
+                <div key={item.id}>
+                  <Item item={item} changePlusBtn={changePlusBtn} />
+                </div>
+              );
+            })}
+          </div>
+
+          <aside className="aside">
+            <div className="first-row">BENEFIT IS BEING WRAISIT MEMBER</div>
+            <div className="check-image second-row">
+              <img src="/images/Vectorcheck.png" />{" "}
+              <span>Flexible remote wroking schedule</span>
+            </div>
+            <div className="check-image">
+              <img src="/images/Vectorcheck.png" />{" "}
+              <span>Health insurance</span>
+            </div>
+            <div className="check-image">
+              <img src="/images/Vectorcheck.png" /> <span>Team buildings</span>
+            </div>
+            <div className="check-image">
+              <img src="/images/Vectorcheck.png" />{" "}
+              <span>Opportunites for professional development</span>
+            </div>
+          </aside>
         </section>
-       
       </main>
 
       <footer></footer>
@@ -66,10 +82,19 @@ export default function Home({ objectData }) {
           padding: 100px 0 100px 120px;
         }
 
+        p {
+          margin: 0;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #001d6b;
+        }
+
         h1 {
           width: 379px;
-          
-          margin: 16px 0 60px 0;
+          margin: 16px 0 0 0;
           font-family: "Ubuntu";
           font-style: normal;
           font-weight: 700;
@@ -79,13 +104,15 @@ export default function Home({ objectData }) {
 
         .title {
           height: 28px;
+          margin-top: 60px;
         }
 
-        .block {
+        .title-block {
           margin-left: 40px;
         }
+
         .title span {
-          display: inline-block;          
+          display: inline-block;
           height: 28px;
           font-family: "Inter";
           font-style: normal;
@@ -94,17 +121,45 @@ export default function Home({ objectData }) {
           line-height: 28px;
         }
 
-        section{
-          display:flex;          
+        section {
+          display: flex;
+          margin-top: 15px;
         }
 
         aside {
-          margin-top: 32px;
+          margin: 12px 0 0 32px;
+        }
 
+        .first-row {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #001d6b;
         }
         .items {
-          margin-top: 32px;
           width: 789px;
+        }
+
+        .check-image img {
+          width: 17.6px;
+          height: 13.4px;
+        }
+
+        .second-row {
+          margin-top: 16px;
+        }
+
+        .check-image span {
+          display: inline-block;
+          margin-left: 13px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+          color: rgba(0, 0, 0, 0.7);
         }
       `}</style>
 

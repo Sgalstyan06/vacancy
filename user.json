@@ -3,24 +3,24 @@
     "id": 1,
     "vacancy": "Senyor Vue.js Developer",
     "description": "we are looking for positive and with big motivations person for Senyor Vue.js Developer vacancy",
-    "show_description_button": "+"
+    "show_description_button": "/images/plus.png"
   },
   {
     "id": 2,
     "vacancy": "Middle React Developer",
     "description": "we are looking for positive and with big motivations person for Middle React Developer vacancy",
-    "show_description_button": "+"
+    "show_description_button": "/images/plus.png"
   },
   {
     "id": 3,
     "vacancy": "Junior Javascript Developer",
     "description": "we are looking for positive and with big motivations person for Junior Javascript Developer vacancy",
-    "show_description_button": "+"
+    "show_description_button": "/images/plus.png"
   },
   {
     "id": 4,
     "vacancy": "Senyor Full-Stack Engineer",
     "description": "we are looking for positive and with big motivations person for Senyor Full-Stack Engineer vacancy",
-    "show_description_button": "+"
+    "show_description_button": "/images/plus.png"
   }
 ]

@@ -32,10 +32,11 @@ export default function Item({ item, changePlusBtn }) {
             openDescription(item.id);
           }}
         >
-          {item.show_description_button}
+        <img  src={item.show_description_button}/>
         </button>
       </div>
       <style jsx>{`
+
         .main-item {
           position: relative;
           border: 1px solid #1dca9d;
