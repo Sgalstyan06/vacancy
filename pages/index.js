@@ -7,8 +7,7 @@ import Item from "../components/item";
 export default function Home({ objectData }) {
   const [listItem, setListItem] = useState([...objectData]);
 
-  function changePlusBtn(id) {
-    
+  function changePlusBtn(id) {    
     setListItem(
       listItem.map((item) => {
         if (item.id === id) {
@@ -30,7 +29,6 @@ export default function Home({ objectData }) {
       <Head>
         <title>We are hiring</title>
       </Head>
-
       <main>
         <p>Open Vacancies</p>
         <h1>We are hiring!</h1>
@@ -39,7 +37,6 @@ export default function Home({ objectData }) {
           <span className="title-block">Engineering</span>
           <span className="title-block">Businnes Development</span>
         </div>
-
         <section>
           <div className="items">
             {listItem.map((item) => {
@@ -50,7 +47,6 @@ export default function Home({ objectData }) {
               );
             })}
           </div>
-
           <aside className="aside">
             <div className="first-row">BENEFIT IS BEING WRAISIT MEMBER</div>
             <div className="check-image second-row">
@@ -71,11 +67,7 @@ export default function Home({ objectData }) {
           </aside>
         </section>
       </main>
-
-      <footer>
-          
-            
-            </footer>
+      <footer></footer>
 
       <style jsx>{`
         main {

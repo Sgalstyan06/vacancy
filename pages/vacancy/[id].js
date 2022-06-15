@@ -1,16 +1,13 @@
 import { useRouter } from "next/router";
 import fsPromises from "fs/promises";
 import path from "path";
-import Layout from "./layout";
 
 export default function User({ descript, vacancy }) {
   return (
     <div className="content">
       <div className="vacancy-title">{vacancy}</div>
       <div className="accordion-content">
-        
         <div className="first-span">{descript.first_span}</div>
-
         <p>{descript.first_p}</p>
         <ul>
           <li>{descript.ul.first_li}</li>
@@ -18,9 +15,7 @@ export default function User({ descript, vacancy }) {
           <li>{descript.ul.third_li}</li>
           <li>{descript.ul.forth_li}</li>
         </ul>
-
         <p>{descript.second_p}</p>
-
         <span>{descript.second_span}</span>
         <span className="it-sector">{descript.third_span}</span>
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { Markup } from "interweave";
 
 export default function Item({ item, changePlusBtn }) {
   const [showContent, SetShowContent] = useState(false);
@@ -17,20 +16,18 @@ export default function Item({ item, changePlusBtn }) {
     }
     changePlusBtn(id);
   }
-  console.log("item", item);
+    
   return (
     <div ref={ref} className="main-item">
       <div className={`item `}>
         <Link href={`/vacancy/${item.id}`}>
           <a>
             <span className="vacancy-title">{item.vacancy}</span>
-
             <div className="hide">
               <div className="accordion-content">
                 <span className="first-span">
                   {item.description.first_span}
                 </span>
-
                 <p>{item.description.first_p}</p>
                 <ul>
                   <li>{item.description.ul.first_li}</li>
@@ -38,9 +35,7 @@ export default function Item({ item, changePlusBtn }) {
                   <li>{item.description.ul.third_li}</li>
                   <li>{item.description.ul.forth_li}</li>
                 </ul>
-
                 <p>{item.description.second_p}</p>
-
                 <span>{item.description.second_span}</span>
                 <span className="it-sector">{item.description.third_span}</span>
               </div>
