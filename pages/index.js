@@ -186,20 +186,27 @@ export default function Home({ objectData }) {
 
           .title {
             height: 28px;
-            margin-top: 32px;
-            
-
-
+            margin-top: 32px; 
+            overflow: hidden;          
           }
 
+          .title span {
+            display: inline;           
+            white-space: nowrap;
+          }
+
+          .title-block {
+            margin-left: 50px;            
+          }
+          
           section {
-            flex-direction: column;
-            
+            flex-direction: column;            
           }
 
           .items {
             width: 327px;
           }
+          
           aside {
             margin: 32px 0 0 0px;
             padding: 0 24px 24px 20px;
@@ -216,6 +223,7 @@ export default function Home({ objectData }) {
           .check-image {
             margin-left: 3.4px;
           }
+          
           .Opportun{
             width: 233px;
             padding:2px;
