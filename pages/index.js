@@ -7,7 +7,7 @@ import Item from "../components/item";
 export default function Home({ objectData }) {
   const [listItem, setListItem] = useState([...objectData]);
 
-  function changePlusBtn(id) {    
+  function changePlusBtn(id) {
     setListItem(
       listItem.map((item) => {
         if (item.id === id) {
@@ -61,8 +61,8 @@ export default function Home({ objectData }) {
               <img src="/images/Vectorcheck.png" /> <span>Team buildings</span>
             </div>
             <div className="check-image">
-              <img src="/images/Vectorcheck.png" />{" "}
-              <span>Opportunites for professional development</span>
+              <img className="last-check-img" src="/images/Vectorcheck.png" />{" "}
+              <span className="Opportun">Opportunites for professional development</span>
             </div>
           </aside>
         </section>
@@ -97,7 +97,7 @@ export default function Home({ objectData }) {
         }
 
         .title {
-          height: 28px;
+          height: 28px;          
           margin-top: 60px;
         }
 
@@ -117,6 +117,7 @@ export default function Home({ objectData }) {
 
         section {
           display: flex;
+          width: 100%;
           margin-top: 15px;
         }
 
@@ -154,6 +155,76 @@ export default function Home({ objectData }) {
           font-size: 16px;
           line-height: 28px;
           color: rgba(0, 0, 0, 0.7);
+        }
+
+        @media screen and (max-width: 376px) {
+          * {
+            box-sizing: border-box;
+          }
+          main {
+            width: 375px;
+            padding: 50px 24px 20px 24px;
+          }
+
+          p {
+            width: 327px;
+            height: 19px;
+            margin: 0;
+            font-size: 16px;
+            line-height: 19px;
+            color: #001d6b;
+          }
+
+          h1 {
+            width: 328px;
+            height: 34px;
+            margin: 16px 0 0 0;
+            font-size: 24px;
+            line-height: 34px;
+            color: #121212;
+          }
+
+          .title {
+            height: 28px;
+            margin-top: 32px;
+            
+
+
+          }
+
+          section {
+            flex-direction: column;
+            
+          }
+
+          .items {
+            width: 327px;
+          }
+          aside {
+            margin: 32px 0 0 0px;
+            padding: 0 24px 24px 20px;
+          }
+
+          .first-row {
+            width: 327px;
+            height: 19px;
+            font-size: 16px;
+            line-height: 19px;
+            color: #001d6b;
+          }
+
+          .check-image {
+            margin-left: 3.4px;
+          }
+          .Opportun{
+            width: 233px;
+            padding:2px;
+          }
+
+          .last-check-img {
+            vertical-align: top;
+            margin-top: 10px;
+          }
         }
       `}</style>
 

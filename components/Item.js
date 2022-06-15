@@ -16,7 +16,7 @@ export default function Item({ item, changePlusBtn }) {
     }
     changePlusBtn(id);
   }
-    
+
   return (
     <div ref={ref} className="main-item">
       <div className={`item `}>
@@ -57,9 +57,10 @@ export default function Item({ item, changePlusBtn }) {
         .main-item {
           position: relative;
           border: 1px solid #1dca9d;
-          width: 789px;
-          height: 64px;
+          width: 100%;
+          height: 60px;
           margin-top: 17px;
+          padding-left: 0;
           background: #ffffff;
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           overflow: hidden;
@@ -80,7 +81,7 @@ export default function Item({ item, changePlusBtn }) {
           display: inline-block;
           width: 376px;
           height: 34px;
-          margin: 15px 393px 15px 20px;
+          margin: 16.4px 0 13px 20px;
           font-family: "Ubuntu";
           font-style: normal;
           font-weight: 700;
@@ -120,12 +121,13 @@ export default function Item({ item, changePlusBtn }) {
 
         .accordion-content {
           width: 749px;
-          height: 420px;
+          height: 504px;
           margin: 20px 20px 15px 20px;
           padding: 0;
         }
-
-        .accordion-content span, ul>li {
+        
+        .accordion-content span,
+        ul > li {
           font-family: "Inter";
           font-style: normal;
           font-weight: 400;
@@ -143,6 +145,48 @@ export default function Item({ item, changePlusBtn }) {
 
         .it-sector {
           display: block;
+        }
+
+        @media screen and (max-width: 376px) {
+          .item {
+            width: 327px;
+            height: 60px;
+          }
+
+          .vacancy-title {
+            width: 251px;
+            height: 18px;
+            font-family: "Ubuntu";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+            color: #121212;
+          }
+
+          .btn {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 292px;
+            top: 18px;
+            z-index: 5;
+          }
+
+          .descript {
+            margin-top: 17px;
+            width: 327px;
+            height: 744px;
+            background: #ffffff;
+            box-shadow: 0px 3.45119px 3.45119px rgba(0, 0, 0, 0.25);
+          }
+
+          .accordion-content {
+            width: 289px;
+            height: 672px;
+            margin: 12px 19px 15px 20px;
+            padding: 0;
+          }
         }
       `}</style>
     </div>
