@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
-import fsPromises from "fs/promises";
-import path from "path";
 
-export default function User({ descript, vacancy }) {
+
+export default function User({vacancy, descript}) {
   return (
     <div className="content">
       <div className="vacancy-title">{vacancy}</div>
@@ -114,13 +113,13 @@ export default function User({ descript, vacancy }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
-  const filePath = path.join(process.cwd(), `user.json`);
-  const jsonData = await fsPromises.readFile(filePath);
-  const objectData = JSON.parse(jsonData);
-  const data = objectData.filter((item) => item.id === +params.id);
+export async function getServerSideProps(context ) {
 
+ const data = await fetch("http://localhost:3000/api/getAllJobs/");
+ const res = await data.json(); 
+ const dataItem = res.data.filter(item => item.id == context.params.id);
+ 
   return {
-    props: { descript: data[0].description, vacancy: data[0].vacancy },
+    props: {vacancy:dataItem[0].vacancy, descript: dataItem[0].description},
   };
 }

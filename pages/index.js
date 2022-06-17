@@ -1,10 +1,10 @@
 import Head from "next/head";
-import fsPromises from "fs/promises";
-import path from "path";
 import { useState } from "react";
 import Item from "../components/item";
 
 export default function Home({ objectData }) {
+
+  console.log(objectData);
   const [listItem, setListItem] = useState([...objectData]);
 
   function changePlusBtn(id) {
@@ -39,6 +39,8 @@ export default function Home({ objectData }) {
         </div>
         <section>
           <div className="items">
+
+            {console.log("listItem", listItem)}
             {listItem.map((item) => {
               return (
                 <div key={item.id}>
@@ -255,11 +257,16 @@ export default function Home({ objectData }) {
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "user.json");
-  const jsonData = await fsPromises.readFile(filePath);
-  const objectData = JSON.parse(jsonData);
+console.log("init");
+  const getJobs = await fetch('http://localhost:3000/api/getAllJobs/');
+  // console.log("getJobs", getJobs)
+  const result = await getJobs.json();
+  console.log("result", result);
+  // const filePath = path.join(process.cwd(), "user.json");
+  // const jsonData = await fsPromises.readFile(filePath);
+  // const objectData = JSON.parse(jsonData);
 
   return {
-    props: { objectData },
+    props: { objectData: result.data},
   };
 }
