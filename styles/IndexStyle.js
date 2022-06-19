@@ -61,7 +61,7 @@ export const Title = styled.div`
     overflow: hidden;
   }
 `;
-//title block
+
 export const TitleItem = styled.span`
   display: inline-block;
   height: 28px;
@@ -77,7 +77,7 @@ export const TitleItem = styled.span`
     margin-left: 40px;
   }
 `;
-// title span
+
 export const TitleFirstItem = styled.span`
   display: inline-block;
   height: 28px;
@@ -137,8 +137,6 @@ export const FirstRow = styled.div`
   }
 `;
 
-
-//second row
 export const SecondRow = styled.div`
   margin-top: 16px;
 
@@ -146,18 +144,17 @@ export const SecondRow = styled.div`
     margin-left: 3.4px;
   }
 `;
-// check image block
+
 export const Checked = styled.div`
   @media screen and (max-width: 376px) {
     margin-left: 3.4px;
   }
 `;
-// cehked img
+
 export const CheckedImg = styled.img`
   width: 17.6px;
   height: 13.4px;
 `;
-
 
 export const CheckImageText = styled.span`
   display: inline-block;
@@ -169,7 +166,7 @@ export const CheckImageText = styled.span`
   line-height: 28px;
   color: rgba(0, 0, 0, 0.7);
 `;
-//opportun
+
 export const LastCheckImageText = styled.span`
   display: inline-block;
   margin-left: 13px;

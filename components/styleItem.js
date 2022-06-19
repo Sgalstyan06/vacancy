@@ -1,15 +1,26 @@
 import styled from "styled-components";
+import { primaryColor, whiteColor } from "../styles/varuables";
 
 export const MainItem = styled.div`
   position: relative;
-  border: 1px solid #1dca9d;
   width: 100%;
   height: 60px;
   margin-top: 17px;
   padding-left: 0;
-  background: #ffffff;
+  background: ${whiteColor};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to left top,
+      ${primaryColor} 0%,
+      ${whiteColor} 100px,
+      #fff 50%,
+      #fff calc(100% - 100px),
+      ${primaryColor} 100%
+    )
+    10;
 `;
 
 export const Item = styled.div`
@@ -76,24 +87,34 @@ export const Button = styled.button`
   line-height: 22px;
   color: #1dca9d;
   font-size: 28px;
-  background: #ffffff;
+  background: ${whiteColor};
   padding: 0;
 `;
-//hide
+
 export const Descript = styled.div`
   position: relative;
   width: 789px;
   height: 504px;
   margin-top: 17px;
-  background: #ffffff;
+  background: ${whiteColor};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border: 1px solid #1dca9d;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to left top,
+      ${primaryColor} 0%,
+      ${whiteColor} 100px,
+      #fff 50%,
+      #fff calc(100% - 100px),
+      ${primaryColor} 100%
+    )
+    10;
 
   @media screen and (max-width: 376px) {
     margin-top: 17px;
     width: 327px;
     height: 744px;
-    background: #ffffff;
+    background: ${whiteColor};
     box-shadow: 0px 3.45119px 3.45119px rgba(0, 0, 0, 0.25);
   }
 `;
@@ -132,7 +153,6 @@ export const AccordionUl = styled.ul`
   }
 `;
 
-
 export const BlockP = styled.p`
   margin-top: 30px;
   margin-bottom: 30px;
@@ -142,4 +162,10 @@ export const BlockP = styled.p`
 
 export const ItSector = styled.span`
   display: block;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
 `;

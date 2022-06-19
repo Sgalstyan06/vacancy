@@ -4,8 +4,7 @@ import { useRef, useState } from "react";
 import * as Styled from "./styleItem";
 
 export default function Item({ item, changePlusBtn }) {
-  const [showContent, SetShowContent] = useState(false);
-  const ref = useRef(null);
+  const [showContent, SetShowContent] = useState(false);  
   const [MainBlock, setMainBlock] = useState(Styled.MainItem);
 
   function openDescription(id) {
@@ -20,7 +19,7 @@ export default function Item({ item, changePlusBtn }) {
   }
 
   return (
-    <MainBlock ref={ref}>
+    <MainBlock >
       <Styled.Item>
         <Link href={`/vacancy/${item.id}`}>
           <Styled.Anchor>

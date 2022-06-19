@@ -31,17 +31,17 @@ export default function Home({ objectData }) {
       <Styled.Main>
         <Styled.Paragraf>Open Vacancies</Styled.Paragraf>
         <Styled.H1>We are hiring!</Styled.H1>
-        <Styled.Title className="title">
+        <Styled.Title>
           <Styled.TitleFirstItem>Quality Assurance</Styled.TitleFirstItem>
-          <Styled.TitleItem className="title-block">
+          <Styled.TitleItem>
             Engineering
           </Styled.TitleItem>
-          <Styled.TitleItem className="title-block">
+          <Styled.TitleItem>
             Businnes Development
           </Styled.TitleItem>
         </Styled.Title>
         <Styled.Section>
-          <Styled.Items className="items">
+          <Styled.Items>
             {listItem.map((item) => {
               return (
                 <div key={item.id}>
@@ -50,25 +50,25 @@ export default function Home({ objectData }) {
               );
             })}
           </Styled.Items>
-          <Styled.Aside className="aside">
+          <Styled.Aside>
             <Styled.FirstRow className="first-row">
               BENEFIT IS BEING WRAISIT MEMBER
             </Styled.FirstRow>
-            <Styled.SecondRow className="check-image second-row">
-              <Styled.CheckedImg src="/images/Vectorcheck.png" />{" "}
+            <Styled.SecondRow>
+              <Styled.CheckedImg src="/images/Vectorcheck.png" />
               <Styled.CheckImageText>
                 Flexible remote wroking schedule
               </Styled.CheckImageText>
             </Styled.SecondRow>
-            <Styled.Checked className="check-image">
-              <Styled.CheckedImg src="/images/Vectorcheck.png" />{" "}
+            <Styled.Checked>
+              <Styled.CheckedImg src="/images/Vectorcheck.png" />
               <Styled.CheckImageText>Health insurance</Styled.CheckImageText>
             </Styled.Checked>
-            <Styled.Checked className="check-image">
-              <Styled.CheckedImg src="/images/Vectorcheck.png" />{" "}
+            <Styled.Checked>
+              <Styled.CheckedImg src="/images/Vectorcheck.png" />
               <Styled.CheckImageText>Team buildings</Styled.CheckImageText>
             </Styled.Checked>
-            <Styled.Checked className="check-image">
+            <Styled.Checked>
               <Styled.LastCheckedImg
                 className="last-check-img"
                 src="/images/Vectorcheck.png"
@@ -79,24 +79,7 @@ export default function Home({ objectData }) {
             </Styled.Checked>
           </Styled.Aside>
         </Styled.Section>
-      </Styled.Main>
-      <footer></footer>
-
-     
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      </Styled.Main>      
     </div>
   );
 }
