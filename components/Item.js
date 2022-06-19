@@ -6,32 +6,27 @@ import * as Styled from "./styleItem";
 export default function Item({ item, changePlusBtn }) {
   const [showContent, SetShowContent] = useState(false);
   const ref = useRef(null);
-  const [MainBlock, setMainBlock]  = useState(Styled.MainItem);
+  const [MainBlock, setMainBlock] = useState(Styled.MainItem);
 
   function openDescription(id) {
-    
     if (!showContent) {
-
-      setMainBlock( Styled.Descript);
+      setMainBlock(Styled.Descript);
       SetShowContent((prev) => !prev);
-
-    } else {    
-
-      setMainBlock( Styled.MainItem);
+    } else {
+      setMainBlock(Styled.MainItem);
       SetShowContent((prev) => !prev);
-
     }
     changePlusBtn(id);
   }
 
   return (
-    < MainBlock ref={ref} >
+    <MainBlock ref={ref}>
       <Styled.Item>
         <Link href={`/vacancy/${item.id}`}>
           <Styled.Anchor>
-            <Styled.VacancyTitle >{item.vacancy}</Styled.VacancyTitle>
-            <div >
-              <Styled.AccordContent >
+            <Styled.VacancyTitle>{item.vacancy}</Styled.VacancyTitle>
+            <div>
+              <Styled.AccordContent>
                 <Styled.AccordionText>
                   {item.description.first_span}
                 </Styled.AccordionText>
@@ -43,17 +38,18 @@ export default function Item({ item, changePlusBtn }) {
                   <li>{item.description.ul.forth_li}</li>
                 </Styled.AccordionUl>
                 <Styled.BlockP>{item.description.second_p}</Styled.BlockP>
-                <Styled.AccordionText>{item.description.second_span}</Styled.AccordionText>
-                <Styled.ItSector >{item.description.third_span}</Styled.ItSector>
+                <Styled.AccordionText>
+                  {item.description.second_span}
+                </Styled.AccordionText>
+                <Styled.ItSector>{item.description.third_span}</Styled.ItSector>
               </Styled.AccordContent>
             </div>
           </Styled.Anchor>
         </Link>
       </Styled.Item>
-      <Styled.Btn >
+      <Styled.Btn>
         <Styled.Button
           onClick={() => {
-            
             openDescription(item.id);
           }}
         >

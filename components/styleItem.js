@@ -131,7 +131,7 @@ export const AccordionUl = styled.ul`
     color: rgba(0, 0, 0, 0.7);
   }
 `;
-export const Ul = styled.ul``;
+
 
 export const BlockP = styled.p`
   margin-top: 30px;
