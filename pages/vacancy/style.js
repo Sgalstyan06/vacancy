@@ -9,23 +9,22 @@ export const Content = styled.div`
   background: ${whiteColor};
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-style: solid;
-    border-width: 2px;
-    border-image: linear-gradient(
-        to left top,
-        ${primaryColor} 0%,
-        ${whiteColor} 100px,
-        #fff 50%,
-        #fff calc(100% - 100px),
-        ${primaryColor} 100%
-      )
-      10;
+  border-width: 2px;
+  border-image: linear-gradient(
+      to left top,
+      ${primaryColor} 0%,
+      ${whiteColor} 100px,
+      #fff 50%,
+      #fff calc(100% - 100px),
+      ${primaryColor} 100%
+    )
+    10;
 
   @media screen and (max-width: 376px) {
     width: 360px;
     height: 744px;
     background: ${whiteColor};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-   
   }
 `;
 export const VacancyTitile = styled.div`
@@ -106,4 +105,13 @@ export const ItSector = styled.span`
   font-size: 16px;
   line-height: 28px;
   color: rgba(0, 0, 0, 0.7);
+`;
+
+export const Message = styled.div`
+  position: absolute;
+  font-size: 24px;
+  color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
