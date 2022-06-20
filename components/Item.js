@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import * as Styled from "./styleItem";
 
 export default function Item({ item, changePlusBtn }) {
@@ -27,20 +27,17 @@ export default function Item({ item, changePlusBtn }) {
             <div>
               <Styled.AccordContent>
                 <Styled.AccordionText>
-                  {item.description.first_span}
+                  {item.description.hiring}
                 </Styled.AccordionText>
-                <Styled.BlockP>{item.description.first_p}</Styled.BlockP>
+                <Styled.BlockP>{item.description.requirment}</Styled.BlockP>
                 <Styled.AccordionUl>
-                  <li>{item.description.ul.first_li}</li>
-                  <li>{item.description.ul.second_li}</li>
-                  <li>{item.description.ul.third_li}</li>
-                  <li>{item.description.ul.forth_li}</li>
+                  {item.description["soft-skills"].map((elem, index) => <li key = {index}>{elem}</li>)}
                 </Styled.AccordionUl>
-                <Styled.BlockP>{item.description.second_p}</Styled.BlockP>
+                <Styled.BlockP>{item.description.advatages}</Styled.BlockP>                     
                 <Styled.AccordionText>
-                  {item.description.second_span}
+                  {item.description.language}
                 </Styled.AccordionText>
-                <Styled.ItSector>{item.description.third_span}</Styled.ItSector>
+                <Styled.ItSector>{item.description.it}</Styled.ItSector>
               </Styled.AccordContent>
             </div>
           </Styled.Anchor>

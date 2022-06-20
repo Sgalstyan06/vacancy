@@ -1,21 +1,20 @@
 import * as Styled from "./style";
 
-export default function User({vacancy, descript}) {
-  return (
+export default function User({vacancy, description}) {
+  return ( 
     <Styled.Content>
       <Styled.VacancyTitile>{vacancy}</Styled.VacancyTitile>
       <Styled.Accordion>
-        <Styled.Text>{descript.first_span}</Styled.Text>
-        <Styled.Paragraf>{descript.first_p}</Styled.Paragraf>
+        <Styled.Text>{description.hiring}</Styled.Text>
+        <Styled.Paragraf>{description.requirment}</Styled.Paragraf>
         <Styled.Ul>
-          <li>{descript.ul.first_li}</li>
-          <li>{descript.ul.second_li}</li>
-          <li>{descript.ul.third_li}</li>
-          <li>{descript.ul.forth_li}</li>
+          {description["soft-skills"].map((elem, index) =>{
+            return <li key={index}>{elem}</li>
+          })}          
         </Styled.Ul>
-        <Styled.Paragraf>{descript.second_p}</Styled.Paragraf>
-        <Styled.Text>{descript.second_span}</Styled.Text>
-        <Styled.ItSector>{descript.third_span}</Styled.ItSector>
+        <Styled.Paragraf>{description.advatages}</Styled.Paragraf>
+        <Styled.Text>{description.language}</Styled.Text>
+        <Styled.ItSector>{description.it}</Styled.ItSector>
       </Styled.Accordion>     
     </Styled.Content>
   );
@@ -23,11 +22,15 @@ export default function User({vacancy, descript}) {
 
 export async function getServerSideProps(context ) {
 
- const data = await fetch("http://localhost:3000/api/getAllJobs/");
- const res = await data.json(); 
- const dataItem = res.data.filter(item => item.id == context.params.id);
+const id = parseInt(context.query.id)
+
+ const data = await fetch(`http://localhost:3000/api/vacancy/${id}`);
+ const result = await data.json();  
+ console.log("res", result);
+
  
   return {
-    props: {vacancy:dataItem[0].vacancy, descript: dataItem[0].description},
+    props: {vacancy: result.vacancy, description: result.description},
+    
   };
 }

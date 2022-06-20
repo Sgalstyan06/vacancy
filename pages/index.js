@@ -85,11 +85,10 @@ export default function Home({ objectData }) {
 }
 
 export async function getStaticProps() {
-  const getJobs = await fetch("http://localhost:3000/api/getAllJobs/");
-
-  const result = await getJobs.json();
+  const getJobs = await fetch("http://localhost:3000/api/jobs/");
+  const jobs = await getJobs.json();
 
   return {
-    props: { objectData: result.data },
+    props: { objectData: jobs.getJobs },
   };
 }
