@@ -26,9 +26,8 @@ export async function getServerSideProps(context) {
   const id = parseInt(context.query.id);
   const data = await fetch(`http://localhost:3000/api/vacancy/${id}`);
   const result = await data.json();
-  console.log("res", result);
 
-return  result.message !== `Description width id ${id} not found` ? {
+return  (result.vacancy && result.description) ? {
     props: { vacancy: result.vacancy, description: result.description }
   } : {props: {message: result.message}}
 }

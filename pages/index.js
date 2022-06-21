@@ -33,12 +33,8 @@ export default function Home({ objectData }) {
         <Styled.H1>We are hiring!</Styled.H1>
         <Styled.Title>
           <Styled.TitleFirstItem>Quality Assurance</Styled.TitleFirstItem>
-          <Styled.TitleItem>
-            Engineering
-          </Styled.TitleItem>
-          <Styled.TitleItem>
-            Businnes Development
-          </Styled.TitleItem>
+          <Styled.TitleItem>Engineering</Styled.TitleItem>
+          <Styled.TitleItem>Businnes Development</Styled.TitleItem>
         </Styled.Title>
         <Styled.Section>
           <Styled.Items>
@@ -79,7 +75,7 @@ export default function Home({ objectData }) {
             </Styled.Checked>
           </Styled.Aside>
         </Styled.Section>
-      </Styled.Main>      
+      </Styled.Main>
     </div>
   );
 }
@@ -88,7 +84,9 @@ export async function getStaticProps() {
   const getJobs = await fetch("http://localhost:3000/api/jobs/");
   const jobs = await getJobs.json();
 
-  return {
-    props: { objectData: jobs.getJobs },
-  };
+  return jobs.getJobs
+    ? {
+        props: { objectData: jobs.getJobs },
+      }
+    : { props: { message: jobs.message } };
 }

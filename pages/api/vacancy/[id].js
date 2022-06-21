@@ -15,6 +15,10 @@ export default function handleId(req, res) {
           .status(404)
           .json({ message: `Description width id ${id} not found` });
       }
+    }else {
+      res
+          .status(400)
+          .json({ message: 'Bad Request' });
     }
   } catch (err) {
     return res
