@@ -5,12 +5,10 @@ export const Main = styled.main`
   height: 1472px;
   padding: 100px 0 100px 120px;
 
-  @media screen and (max-width: 376px) {
-    
+  @media screen and (max-width: 376px) {    
       box-sizing: border-box;   
       width: 375px;
-      padding: 50px 24px 20px 24px;
-    
+      padding: 50px 24px 20px 24px;    
 `;
 
 export const Paragraf = styled.p`

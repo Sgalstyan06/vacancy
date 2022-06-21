@@ -1,7 +1,7 @@
-import * as Styled from "./style";
+import * as Styled from "./styled";
 
 export default function User({ vacancy, description, message }) {
-  console.log("message", message);
+  
   return (
     <Styled.Content>
       { message ? <Styled.Message>{message}</Styled.Message>  : <div> <Styled.VacancyTitile>{vacancy}</Styled.VacancyTitile>
@@ -24,7 +24,7 @@ export default function User({ vacancy, description, message }) {
 
 export async function getServerSideProps(context) {
   const id = parseInt(context.query.id);
-  const data = await fetch(`http://localhost:3000/api/vacancy/${id}`);
+  const data = await fetch(`http://localhost:3000/api/jobs/${id}`);
   const result = await data.json();
 
 return  (result.vacancy && result.description) ? {

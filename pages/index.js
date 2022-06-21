@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Item from "../components/item";
-import * as Styled from "../styles/IndexStyle";
+import * as Styled from "../styles/styled";
 
 export default function Home({ objectData }) {
   const [listItem, setListItem] = useState([...objectData]);
@@ -68,7 +68,7 @@ export default function Home({ objectData }) {
               <Styled.LastCheckedImg
                 className="last-check-img"
                 src="/images/Vectorcheck.png"
-              />{" "}
+              />
               <Styled.LastCheckImageText className="Opportun">
                 Opportunites for professional development
               </Styled.LastCheckImageText>

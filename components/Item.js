@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
-import * as Styled from "./styleItem";
+import * as Styled from "./styled";
 
 export default function Item({ item, changePlusBtn }) {
   const [showContent, SetShowContent] = useState(false);  
@@ -21,7 +21,7 @@ export default function Item({ item, changePlusBtn }) {
   return (
     <MainBlock >
       <Styled.Item>
-        <Link href={`/vacancy/${item.id}`}>
+        <Link href={`/jobs/${item.id}`}>
           <Styled.Anchor>
             <Styled.VacancyTitle>{item.vacancy}</Styled.VacancyTitle>
             <div>

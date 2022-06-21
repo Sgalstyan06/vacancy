@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { primaryColor, whiteColor } from "../styles/varuables";
 
-export const MainItem = styled.div`
+export const MainItem = styled.div` 
   position: relative;
   width: 100%;
   height: 60px;
@@ -85,7 +85,7 @@ export const Button = styled.button`
   border: none;
   width: 20px;
   line-height: 22px;
-  color: #1dca9d;
+  color: ${primaryColor};
   font-size: 28px;
   background: ${whiteColor};
   padding: 0;
